@@ -1,5 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+
+import React from "react";
+import Search from "./pages/search";
+import Saved from "./pages/saved"
 
 function App() {
   return (
