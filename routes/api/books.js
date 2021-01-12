@@ -2,13 +2,13 @@ const router = require("express").Router();
 const listController = require("../../controllers/listController");
 
 router.route("/")
-  .get(listController.findAll)
-  .post(listController.create);
+  .get(listController.getList)
+  .post(listController.createList);
 
 router
   .route("/:id")
   .get(listController.findById)
-  .put(listController.update)
-  .delete(listController.remove);
+  .put(listController.updateList)
+  .delete(listController.deleteList);
 
 module.exports = router;
