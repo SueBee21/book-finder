@@ -1,5 +1,5 @@
 import React from "react";
-function Search() {
+function Search(props) {
     return (
         <div className="card">
             <div className="card-body">
