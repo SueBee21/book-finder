@@ -1,16 +1,30 @@
 import React from "react";
-function Results() {
-    return (
-        <div className="card">
-            <div className="card-header">
-                Featured
-            </div>
-            <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
-                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    )
+function Results(props) {
+  return (
+    <div>
+      {props.books.length > 0
+        ? props.books.map((book) => {
+            return (
+              <div className="card">
+                <div className="card-header">Results</div>
+                <div className="card-body">
+                  <h5 className="card-title" name="title">
+                    {book.volumeInfo.title}
+                  </h5>
+                  <img src={book.volumeInfo.imageLinks.smallThumbnail}/>
+                  <p className="card-text" name="synopsis">
+                    {book.volumeInfo.description}
+                  </p>
+                  <a href={book.volumeInfo.infoLink} target="blank" className="btn btn-primary">
+                    More Information
+                  </a>
+                  <button className="btn btn-primary" >Save</button>
+                </div>
+              </div>
+            );
+          })
+        : "no result found"}
+    </div>
+  );
 }
 export default Results;

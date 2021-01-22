@@ -3,7 +3,7 @@ const listController = require("../../controllers/listController");
 
 router.route("/")
   .get(listController.getList)
-  .post(listController.createList);
+  .post(listController.create);
 
 router
   .route("/:id")

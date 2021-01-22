@@ -7,7 +7,7 @@ function Home () {
 // set starting state
 const [books, setBooks] = useState([]);
 const [keyword, setKeyword] = useState("");
-const handleInputChange = event =>{
+const handleInputChange = (event) =>{
     const {value} = event.target
     setKeyword(value);
     console.log(value)
@@ -19,16 +19,32 @@ const handleSubmit = () => {
     })
 }
 
+const handleSave = (book) => {
+    const newBook = {
+        title: book.volumeInfo.title,
+        authors: book.volumeInfo.authors,
+        description: book.volumeInfo.description,
+        image: book.volumeInfo.imageLinks.smallThumbnail,
+        link: book.volumeInfo.infoLink
+    }
+    Api.saveBooks(newBook).then(res =>{
+        console.log(res)
+    })
+}
 
-// load search list
 return (
     <div>
-        <Search keyword={keyword}/>
-        <Results />
+        {console.log(books)}
+        <Search handleSubmit={handleSubmit} keyword={keyword} handleInputChange={handleInputChange}/>
+        <Results 
+            books={books}
+            name="title"
+            placeholder="Title"
+            />
     </div>
 )
 
-// updates saved list
+
 
 }
 
