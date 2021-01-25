@@ -11,14 +11,18 @@ function Results(props) {
                   <h5 className="card-title" name="title">
                     {book.volumeInfo.title}
                   </h5>
-                  <img src={book.volumeInfo.imageLinks.smallThumbnail}/>
+                  <img src={book.volumeInfo.imageLinks.smallThumbnail} />
                   <p className="card-text" name="synopsis">
                     {book.volumeInfo.description}
                   </p>
-                  <a href={book.volumeInfo.infoLink} target="blank" className="btn btn-primary">
+                  <a
+                    href={book.volumeInfo.infoLink}
+                    target="blank"
+                    className="btn btn-primary"
+                  >
                     More Information
                   </a>
-                  <button className="btn btn-primary" >Save</button>
+                  <button className="btn btn-primary">Save</button>
                 </div>
               </div>
             );
