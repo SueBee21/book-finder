@@ -1,6 +1,4 @@
-#Book Finder
-
-# Budget-To-Go
+# Book Finder
 
 ## Description 
   
